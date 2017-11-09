@@ -93,7 +93,7 @@ TEST_CASE("Testing SuperArray class Regular indexes")
 	    INFO("Test #4) Test length FAILED");
 		REQUIRE(sa.length() == 5);
 	}
-    /*
+
 	SECTION("Test #5) Test valid index member")
 	{
 	    INFO("Test #5) Test valid index member FAILED");
@@ -110,7 +110,7 @@ TEST_CASE("Testing SuperArray class Regular indexes")
 	    INFO("Test #7) Test valid index member (too high) FAILED");
 		REQUIRE_THROWS_WITH(sa[9], "Invalid index request, too high");
 	}
-     */
+
 }
 
 /*
