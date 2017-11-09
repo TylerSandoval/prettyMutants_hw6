@@ -69,3 +69,16 @@ int &SuperArray::operator[](const int index)
 	//
 	return arr[realIndex];
 }
+
+int SuperArray::getLowIndex() const {
+    return lowIndex;
+
+}
+
+int SuperArray::getHighIndex() const {
+    return capacity-1;
+}
+
+unsigned int SuperArray::length() const {
+    return capacity;
+}
