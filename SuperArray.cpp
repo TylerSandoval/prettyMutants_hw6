@@ -94,10 +94,20 @@ int SuperArray::getLowIndex() const
 
 int SuperArray::getHighIndex() const
 {
-    return lowIndex + capacity-1;
+    return highIndex;
 }
 
 unsigned int SuperArray::length() const
 {
     return capacity;
+}
+
+void SuperArray::resize(const int begIndex, const unsigned int high) {//3x15
+
+    SuperArray::arr = new int[capacity];
+    SuperArray::capacity = high;
+    // Other info below
+    SuperArray::lowIndex = begIndex;
+    SuperArray::highIndex = high-1;
+
 }
