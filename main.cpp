@@ -1,6 +1,10 @@
 #include <iostream>
+#include "SuperArray.h"
+#include <cstring>
+#include <string>
+using namespace std;
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+int main()
+{
+    // FOR TESTING
 }
