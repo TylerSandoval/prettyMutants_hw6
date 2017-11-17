@@ -86,35 +86,64 @@ int &SuperArray::operator[](const int index)
     return arr[realIndex];
 }
 
+/*!
+ * Getter for low index array value
+ * @return lowIndex
+ */
 int SuperArray::getLowIndex() const
 {
     return lowIndex;
 
 }
 
+/*!
+ * Getter for high index array value
+ * @return highIndex
+ */
 int SuperArray::getHighIndex() const
 {
     return highIndex;
 }
 
+/*!
+ * Getter for array length/capacity
+ * @return capacity
+ */
 unsigned int SuperArray::length() const
 {
     return capacity;
 }
 
-void SuperArray::resize(const int begIndex, const unsigned int capacity) {
-    int c = capacity-begIndex;
+/*!
+ * Resize method for SuperArray class
+ * @param begIndex : the first value of new array
+ * @param capacity : the new size/capacity of the array
+ */
+void SuperArray::resize(const int begIndex, const unsigned int capacity)
+{
+    int tempQ = SuperArray::capacity;
     int* Newarr = new int[capacity];
-    int difference =
-    for (int i = 0; i < capacity; ++i) {
+    int Diff = tempQ - capacity;
+    int absDiff = abs(Diff) + 1;
+
+    for (int i = 0; i < capacity; ++i)
+    {
         Newarr[i+2] = arr[i];
     }
-    c++;
-    delete[] arr;
-    SuperArray::lowIndex = begIndex;
-    SuperArray::highIndex = begIndex+capacity-1;
-    SuperArray::capacity = capacity;
-    arr = Newarr;
+    if (begIndex < 0)
+    {
+        for (int i = 0; i < capacity; i++)
+        {
+            Newarr[i+absDiff] = arr[i];
+        }
+    }
+    delete arr;
 
+    SuperArray::lowIndex = begIndex;
+    SuperArray::capacity = capacity;
+    SuperArray::arr = Newarr;
+    SuperArray::highIndex = begIndex + capacity -1;
+
+    //delete[] Newarr;
 
 }
